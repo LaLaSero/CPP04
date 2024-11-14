@@ -43,7 +43,7 @@ void WrongCat::getBrainAddress() const
 
 void WrongCat::getIdeas(size_t index) const
 {
-	if(index >= MAX_IDEAS)
+	if(index < 0 || index >= MAX_IDEAS)
 	{
 		std::cerr << "Index out of range" << std::endl;
 		return ;

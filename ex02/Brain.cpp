@@ -30,7 +30,7 @@ Brain &Brain::operator=(const Brain &other)
 
 const std::string& Brain::getIdea(size_t index) const
 {
-	if (index >= MAX_IDEAS)
+	if (index < 0 || index >= MAX_IDEAS)
 	{
 		std::cerr << "Index out of range" << std::endl;
 		return this->ideas[0];
@@ -40,7 +40,7 @@ const std::string& Brain::getIdea(size_t index) const
 
 const std::string* Brain::getIdeaAddress(size_t index) const
 {
-	if (index >= MAX_IDEAS)
+	if (index < 0 || index >= MAX_IDEAS)
 	{
 		std::cerr << "Index out of range" << std::endl;
 		return &this->ideas[0];
@@ -50,7 +50,7 @@ const std::string* Brain::getIdeaAddress(size_t index) const
 
 void Brain::setIdea(size_t index, const std::string &idea)
 {
-	if (index >= MAX_IDEAS)
+	if (index < 0 || index >= MAX_IDEAS)
 	{
 		std::cerr << "Index out of range" << std::endl;
 		return ;
