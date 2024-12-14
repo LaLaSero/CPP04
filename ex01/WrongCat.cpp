@@ -19,7 +19,7 @@ WrongCat::WrongCat(const WrongCat &copy)
 {
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	std::cout << "WrongCat copy constructor called" << std::endl;
 }

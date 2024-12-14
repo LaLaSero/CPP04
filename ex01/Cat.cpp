@@ -6,7 +6,7 @@ Cat::Cat()
 {
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	std::cout << "Cat constructor called" << std::endl;
 }
@@ -23,7 +23,7 @@ Cat::Cat(const Cat &copy)
 {
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	std::cout << "Cat copy constructor called" << std::endl;
 }
@@ -38,7 +38,7 @@ Cat &Cat::operator=(const Cat &copy)
 	brain = new(std::nothrow) Brain(*copy.brain);
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	return *this;
 }

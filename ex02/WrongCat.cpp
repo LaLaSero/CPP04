@@ -19,7 +19,7 @@ WrongCat::WrongCat(const WrongCat &copy)
 {
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	std::cout << "WrongCat copy constructor called" << std::endl;
 }
@@ -34,7 +34,7 @@ WrongCat &WrongCat::operator=(const WrongCat &copy)
 	brain = new(std::nothrow) Brain(*copy.brain);
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	return *this;
 }

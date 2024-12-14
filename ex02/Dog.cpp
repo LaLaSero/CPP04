@@ -19,7 +19,7 @@ Dog::Dog(const Dog &copy)
 {
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	std::cout << "Dog copy constructor called" << std::endl;
 }
@@ -34,7 +34,7 @@ Dog &Dog::operator=(const Dog &copy)
 	brain = new(std::nothrow) Brain(*copy.brain);
 	if (!brain) {
 		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 	return *this;
 }
