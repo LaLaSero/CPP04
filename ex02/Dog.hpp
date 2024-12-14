@@ -17,7 +17,6 @@ class Dog : public Animal
 		void setIdeas(size_t index, const std::string &idea);
 
 	private:
-		std::string type;
 		Brain *brain;
 	
 };

@@ -10,8 +10,5 @@ class Cat : public Animal
 		Cat &operator=(const Cat &copy);
 
 		void makeSound() const;
-
-	private:
-		std::string type;
 	
 };
