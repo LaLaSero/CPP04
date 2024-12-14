@@ -6,11 +6,11 @@ class Cat : public Animal
 {
 	public:
 		Cat();
-		virtual ~Cat();
+		~Cat();
 		Cat(const Cat &copy);
 		Cat &operator=(const Cat &copy);
 
-		virtual void makeSound() const;
+		void makeSound() const;
 
 		void getBrainAddress() const;
 		void getIdeas(size_t index) const;
