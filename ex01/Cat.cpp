@@ -2,8 +2,12 @@
 
 Cat::Cat()
 : Animal("Cat")
-, brain(new Brain())
+, brain(new(std::nothrow) Brain())
 {
+	if (!brain) {
+		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
+		exit(EXIT_FAILURE);
+	}
 	std::cout << "Cat constructor called" << std::endl;
 }
 
@@ -15,8 +19,12 @@ Cat::~Cat(){
 // no need to address with the case that new() failed
 Cat::Cat(const Cat &copy)
 : Animal(copy) // up cast
-, brain(new Brain(*copy.brain)) // deep copy
+, brain(new(std::nothrow) Brain(*copy.brain)) // deep copy
 {
+	if (!brain) {
+		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
+		exit(EXIT_FAILURE);
+	}
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
@@ -27,7 +35,11 @@ Cat &Cat::operator=(const Cat &copy)
 		return *this;
 	Animal::operator=(copy);
 	delete brain;
-	brain = new Brain(*copy.brain);
+	brain = new(std::nothrow) Brain(*copy.brain);
+	if (!brain) {
+		std::cerr << "Failed to allocate Brain, exiting." << std::endl;
+		exit(EXIT_FAILURE);
+	}
 	return *this;
 }
 

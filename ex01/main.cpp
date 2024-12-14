@@ -15,7 +15,7 @@ int main()
 		if (i % 2 == 0)
 		{
 			std::cout << "------Animal[" << i << "] is a Dog------" << std::endl;
-			meta[i] = new Dog();
+			meta[i] = new(std::nothrow) Dog();
 			if (meta[i] == NULL)
 			{
 				std::cout << "Failed to allocate memory" << std::endl;
@@ -25,7 +25,7 @@ int main()
 		else
 		{
 			std::cout << "------Animal[" << i << "] is a Cat------" << std::endl;
-			meta[i] = new Cat();
+			meta[i] = new(std::nothrow) Cat();
 			if (meta[i] == NULL)
 			{
 				std::cout << "Failed to allocate memory" << std::endl;
