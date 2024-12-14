@@ -9,7 +9,7 @@ SRC = main.cpp\
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = animal
 
