@@ -1,8 +1,6 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
@@ -94,6 +92,20 @@ int main()
 	delete b;
 
 	std::cout << "____________________________________________________" << std::endl;
+
+	Dog basic;
+	basic.setIdeas(0, "I want to play");
+	Dog tmp = basic;
+	tmp.getIdeas(0);
+	tmp.setIdeas(0, "I want to sleep");
+
+	std::cout << "--------------DEEP COPY TEST-------------------" << std::endl;
+	tmp.getIdeas(0);
+	basic.getIdeas(0);
+	std::cout << "the two ideas above must be different." << std::endl;
+
+	std::cout << "____________________________________________________" << std::endl;
+
 
 	return 0;
 }
